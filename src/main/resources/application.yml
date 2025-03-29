@@ -5,8 +5,11 @@ spring:
         #        default_batch_fetch_size: 100
         #        auto_quote_keyword: true
         format_sql: true
+        jdbc:
+          batch_size: 1000
     hibernate:
       ddl-auto: update
+
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
