@@ -7,8 +7,10 @@ spring:
         format_sql: true
         jdbc:
           batch_size: 1000
+
     hibernate:
       ddl-auto: update
+    show-sql: true
 
 
   datasource:
@@ -16,3 +18,26 @@ spring:
     url: jdbc:mysql://localhost:3306/db1?characterEncoding=UTF-8&serverTimezone=UTC
     username: user
     password: user
+
+management:
+  info:
+    java:
+      enabled: true
+    os:
+      enabled: true
+    env:
+      enabled: true
+  server:
+    port: 18088
+    health:
+      show-components: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace

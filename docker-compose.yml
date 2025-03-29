@@ -11,3 +11,36 @@ services:
       MYSQL_PASSWORD: user
       MYSQL_DATABASE: db1
     command: --local-infile=1 --secure-file-priv=""
+
+  postgres:
+    image: postgres
+    container_name: nplus-postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user
+      POSTGRES_DB: db1
+    ports:
+      - "5432:5432"
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+    ports:
+      - 9090:9090
+    networks:
+      - network
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - 3000:3000
+    networks:
+      - network
+
+networks:
+  network:

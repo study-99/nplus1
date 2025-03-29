@@ -1,0 +1,14 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+rule_files:
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+  #추가
+  - job_name: "test1" # 수집하는 이름
+    metrics_path: '/actuator/prometheus' # 수집할 경로 지정
+    scrape_interval: 5s # 수집 주기
+    static_configs:
+      - targets: ['host.docker.internal:18088'] # 수집할 서버 정보

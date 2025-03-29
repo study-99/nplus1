@@ -10,7 +10,7 @@ POST_COPY=0
 COMMENT_COPY=0
 
 # IS_COPY가 0일 때만 파일을 복사
-IS_COPY=1
+IS_COPY=0
 
 if [ "$IS_COPY" -eq 0 ]; then
     echo "📦 Copying CSV files into MySQL container..."
