@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 public class CsvDataGenerator {
 
-    static final int TOTAL_POSTS = 1000;
+    static final int TOTAL_POSTS = 1000000;
     static final int COMMENTS_PER_POST = 10;
     static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 

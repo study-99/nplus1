@@ -22,6 +22,14 @@ public class PostController {
         return "ok";
     }
 
+    @GetMapping("/fetch")
+    public String fetchJoin() {
+        List<Post> posts = postRepository.findAllPost();
+        List<PostDto> dto = posts.stream().map(PostDto::of).toList();
+        System.out.println("total post: " + dto.size());
+        return "ok";
+    }
+
     @GetMapping("/test")
     public String test1() {
         return "ok";
