@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+#        default_batch_fetch_size: 100
+#        auto_quote_keyword: true
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db1?characterEncoding=UTF-8&serverTimezone=UTC
+    username: user
+    password: user
